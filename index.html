@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" src="style.css">
+        <style>
+            @font-face {
+                font-family: Burbank;
+                src: url(BurbankBigRegular-Black.woff);
+            }
+
+            body {
+                font-family: Burbank;
+                background-image: url("space.jfif") ;
+                color: azure;
+            }
+
+            h1 {
+                font-family: Burbank;
+                font-size:60px;
+                text-align: center;
+            }
+
+            #countdown {
+                padding-top: 200px;
+                font-size: 50px;
+                text-align: center;
+            }
+
+            .iframe {
+                padding-top: 200px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        </style>
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <h1>Fortnite Chapter 4 Countdown</h1>
+
+        <script>
+            var end = new Date('12/4/2022 06:0 AM');
+            
+                var _second = 1000;
+                var _minute = _second * 60;
+                var _hour = _minute * 60;
+                var _day = _hour * 24;
+                var timer;
+            
+                function showRemaining() {
+                    var now = new Date();
+                    var distance = end - now;
+                    if (distance < 0) {
+            
+                        clearInterval(timer);
+                        document.getElementById('countdown').innerHTML = 'EXPIRED!';
+            
+                        return;
+                    }
+                    var days = Math.floor(distance / _day);
+                    var hours = Math.floor((distance % _day) / _hour);
+                    var minutes = Math.floor((distance % _hour) / _minute);
+                    var seconds = Math.floor((distance % _minute) / _second);
+            
+                    document.getElementById('countdown').innerHTML = days + 'days ';
+                    document.getElementById('countdown').innerHTML += hours + 'hrs ';
+                    document.getElementById('countdown').innerHTML += minutes + 'mins ';
+                    document.getElementById('countdown').innerHTML += seconds + 'secs';
+                }
+            
+                timer = setInterval(showRemaining, 1000);
+            </script>
+            <div id="countdown"></div>
+
+            <div class="iframe">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/XXYxZySYeFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+    </body>
+</html>
