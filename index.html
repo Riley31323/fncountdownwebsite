@@ -21,9 +21,10 @@
             }
 
             #countdown {
-                padding-top: 200px;
                 font-size: 50px;
                 text-align: center;
+                margin-left: 25%;
+                margin-right: 25%;
             }
 
             .iframe {
@@ -31,15 +32,22 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                border: 10px;
+                border-color: white;
             }
+            .main {
+                background-color: aliceblue;
+            }
+            
         </style>
         <script src="index.js"></script>
     </head>
     <body>
-        <h1>Fortnite Chapter 4 Countdown</h1>
+        <div id="main">
+            <h1>Fortnite Chapter 4 Countdown</h1>
 
-        <script>
-            var end = new Date('12/4/2022 06:0 AM');
+         <script>
+             var end = new Date('12/4/2022 06:0 AM');
             
                 var _second = 1000;
                 var _minute = _second * 60;
@@ -69,9 +77,9 @@
                 }
             
                 timer = setInterval(showRemaining, 1000);
-            </script>
-            <div id="countdown"></div>
-
+                </script>
+                <div id="countdown" style="background-color: white;color:black;"></div>
+         </div>
             <div class="iframe">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/XXYxZySYeFU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
